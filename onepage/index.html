@@ -1,447 +1,1962 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="質感時光｜推廣天然植物香氛與室內觀葉植物品牌。為嚮往大自然、注重生活儀式感的你，打造舒緩壓力、靜謐放鬆的綠意生活提案。">
+  <title>質感時光｜天然植物香氛與室內觀葉植物・放鬆心靈的綠意日常</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --forest-dark: #12241b;
+      --forest: #1b382b;
+      --forest-mid: #2b503e;
+      --sage: #587b64;
+      --leaf: #82a377;
+      --sprout: #b5ccad;
+      --mist-green: #eef4ed;
+      --cream: #faf9f4;
+      --cream-card: #f4f1e8;
+      --sand: #c79e67;
+      --sand-light: #ecdcb9;
+      --ink: #1c2720;
+      --muted: #5e6f64;
+      --line: #d8e2d6;
+      --shadow: 0 16px 40px rgba(18, 36, 27, 0.08);
+      --shadow-hover: 0 22px 50px rgba(18, 36, 27, 0.14);
+      --radius: 8px;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       color: var(--ink);
       background: var(--cream);
-      font: 16px/1.7 "Noto Sans TC", sans-serif;
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    button { cursor: pointer; border: none; background: none; }
+    :focus-visible { outline: 3px solid var(--leaf); outline-offset: 4px; }
+
+    .wrap {
+      width: min(1160px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
     .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--sage);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.04em;
+      color: var(--forest-dark);
+      margin-bottom: 18px;
+    }
+    .section-title span {
+      color: var(--sage);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+      max-width: 580px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .btn-primary {
+      background: var(--forest);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(27, 56, 43, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--forest-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(27, 56, 43, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-sand {
+      background: var(--sand);
+      color: var(--forest-dark);
+      font-weight: 700;
+    }
+    .btn-sand:hover {
+      background: #d8b27f;
+      transform: translateY(-2px);
+    }
+
+    /* Site Header */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      transition: background-color 0.3s;
+    }
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: #fff;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--sprout);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--sprout);
+    }
+    .brand-logo svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-family: "Noto Serif TC", serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.2;
+    }
+    .brand-en {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.8vw, 36px);
+    }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.25s;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--leaf);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #fff;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    .nav-links .nav-cta {
+      padding: 9px 20px;
+      border: 1px solid var(--sprout);
+      border-radius: 24px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .nav-links .nav-cta:hover {
+      background: var(--sprout);
+      color: var(--forest-dark);
+    }
+    .nav-links .nav-cta::after { display: none; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 760px;
+      background: linear-gradient(145deg, var(--forest-dark) 0%, #173426 60%, #1e4533 100%);
+      color: #fff;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 35%, rgba(130, 163, 119, 0.25), transparent 45%),
+                  radial-gradient(circle at 20% 80%, rgba(88, 123, 100, 0.18), transparent 50%);
+      z-index: -1;
+    }
+    .hero-rings {
+      position: absolute;
+      top: -150px;
+      right: -120px;
+      width: 800px;
+      height: 800px;
+      border: 1px solid rgba(181, 204, 173, 0.15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(181, 204, 173, 0.04), 0 0 0 190px rgba(181, 204, 173, 0.02);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      padding-top: 130px;
+      padding-bottom: 80px;
+      min-height: 760px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content .eyebrow {
+      color: var(--sprout);
+    }
+    .hero-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+    .hero-title span {
+      color: var(--leaf);
+    }
+    .hero-lede {
+      font-size: clamp(16px, 1.2vw, 18px);
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 530px;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 24px;
+    }
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .badge-icon {
+      color: var(--sprout);
+      font-size: 16px;
+    }
+
+    /* Hero Botanical Artwork (Pure CSS / SVG) */
+    .hero-art {
+      position: relative;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .art-card-main {
+      position: relative;
+      width: 340px;
+      height: 430px;
+      border-radius: 170px 170px 24px 24px;
+      background: linear-gradient(180deg, rgba(88, 123, 100, 0.35) 0%, rgba(20, 48, 34, 0.85) 100%);
+      border: 1px solid rgba(181, 204, 173, 0.3);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 30px;
+      text-align: center;
+    }
+    .art-card-main::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(236, 220, 185, 0.25), transparent 70%);
+    }
+    .botanical-illustration {
+      width: 170px;
+      height: 220px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.25));
+      animation: floatLeaf 5s ease-in-out infinite;
+    }
+    @keyframes floatLeaf {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(1.5deg); }
+    }
+    .art-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .art-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: var(--sprout);
+    }
+
+    /* Floating tags on Hero */
+    .float-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--forest-dark);
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
+      z-index: 3;
+      backdrop-filter: blur(10px);
+      animation: floatGentle 6s ease-in-out infinite;
     }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-    .section-title {
-      margin: 0;
-      font: 800 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .045em;
+    .float-card-1 {
+      bottom: 40px;
+      left: -20px;
     }
-    .text-blue { color: var(--blue); }
-    .button, .outline-link {
-      display: inline-flex;
-      min-height: 50px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
+    .float-card-2 {
+      top: 50px;
+      right: -10px;
+      animation-delay: -3s;
+    }
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--mist-green);
+      display: grid;
+      place-items: center;
+      color: var(--sage);
+      font-size: 18px;
+    }
+    .float-meta strong {
+      display: block;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+      line-height: 1.2;
     }
-    .button:hover, .outline-link:hover { transform: translateY(-2px); }
-    .button--sand { color: var(--navy); background: var(--sand); }
-    .button--sand:hover { background: #f1cb8b; }
-    .button--dark { color: var(--navy); background: #fff; }
-    .outline-link { border-color: rgba(255,255,255,.72); color: #fff; }
-    .outline-link:hover { color: var(--navy); background: #fff; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
+    .float-meta small {
+      font-size: 11px;
+      color: var(--muted);
+    }
 
-    /* Header & hero */
-    .site-header { position: absolute; z-index: 20; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.28); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
-    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); font: 700 16px/1 "Playfair Display", serif; }
-    .brand-copy { display: grid; line-height: 1.05; }
-    .brand-copy strong { font-size: 13px; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; font-size: 8px; letter-spacing: .18em; opacity: .7; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 31px); }
-    .nav-links a { position: relative; color: #fff; font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after { position: absolute; right: 0; bottom: -5px; left: auto; width: 0; height: 1px; background: var(--sky); content: ""; transition: width .25s ease; }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 8px 13px; border: 1px solid rgba(255,255,255,.72); }
-    .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
+    /* Section: Breathing Relaxation Room (使人放鬆心情功能核心) */
+    .relax-room {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--mist-green) 50%, var(--cream) 100%);
+      position: relative;
+    }
+    .relax-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .relax-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(32px, 5vw, 60px);
+      box-shadow: var(--shadow);
+      margin-top: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .breathing-box {
+      margin: 30px auto;
+      position: relative;
+      width: 220px;
+      height: 220px;
+      display: grid;
+      place-items: center;
+    }
+    .breath-circle {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(130, 163, 119, 0.4), rgba(88, 123, 100, 0.15));
+      border: 2px solid var(--leaf);
+      box-shadow: 0 0 40px rgba(130, 163, 119, 0.3);
+      transition: transform 4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .breath-circle.inhale {
+      transform: scale(1.48);
+    }
+    .breath-circle.hold {
+      transform: scale(1.48);
+      border-color: var(--sand);
+      box-shadow: 0 0 50px rgba(199, 158, 103, 0.4);
+    }
+    .breath-circle.exhale {
+      transform: scale(0.95);
+      border-color: var(--sage);
+    }
+    .breath-text {
+      position: relative;
+      z-index: 2;
+      font-family: "Noto Serif TC", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      letter-spacing: 0.08em;
+    }
+    .breath-timer {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .breath-controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .btn-relax {
+      padding: 10px 24px;
+      border-radius: 30px;
+      border: 1px solid var(--sage);
+      color: var(--sage);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.25s;
+    }
+    .btn-relax:hover, .btn-relax.active {
+      background: var(--sage);
+      color: #fff;
+    }
 
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
-    .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero h1 { max-width: 650px; margin: 0 0 23px; font: 800 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .hero h1 span { color: var(--sky); }
-    .hero-lede { max-width: 500px; margin: 0; color: rgba(255,255,255,.79); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .hero-note { margin: 31px 0 0; color: rgba(255,255,255,.55); font: 600 11px/1.5 "Playfair Display", serif; letter-spacing: .16em; }
-    .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
-    .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
+    /* Section: Brand Story / Philosophy (#about) */
+    .story-section {
+      padding: 110px 0;
+      background: #fff;
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(40px, 7vw, 90px);
+      align-items: center;
+    }
+    .story-visual-wrap {
+      position: relative;
+    }
+    .story-badge-frame {
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4/5;
+      border-radius: 220px 220px 16px 16px;
+      background: linear-gradient(135deg, var(--mist-green) 0%, #e2ece0 100%);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .story-badge-frame svg {
+      width: 180px;
+      height: 220px;
+      filter: drop-shadow(0 15px 25px rgba(27, 56, 43, 0.12));
+    }
+    .story-quote-card {
+      position: absolute;
+      bottom: -24px;
+      right: -16px;
+      background: var(--forest);
+      color: #fff;
+      padding: 24px 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-hover);
+      max-width: 260px;
+    }
+    .story-quote-card p {
+      font-family: "Noto Serif TC", serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.6;
+      letter-spacing: 0.05em;
+    }
+    .story-quote-card span {
+      display: block;
+      margin-top: 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--sprout);
+    }
 
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: hidden; }
-    .hero-art .sun { position: absolute; top: 52px; right: 54px; width: clamp(138px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #b9e8f5; box-shadow: 0 0 0 27px rgba(117,198,232,.09), 0 0 0 59px rgba(117,198,232,.045); }
-    .mountain { position: absolute; right: -11%; bottom: 6px; width: 116%; height: 260px; transform: skewY(-9deg); transform-origin: right bottom; background: linear-gradient(146deg, transparent 0 27%, rgba(61,145,184,.36) 27.3% 48%, rgba(17,97,143,.77) 48.3%); clip-path: polygon(0 62%, 28% 20%, 44% 57%, 68% 4%, 100% 57%, 100% 100%, 0 100%); }
-    .mountain--back { right: 13%; bottom: 98px; width: 108%; height: 220px; opacity: .46; transform: skewY(-4deg); background: #2a81ae; clip-path: polygon(0 84%, 31% 30%, 45% 62%, 66% 9%, 100% 66%, 100% 100%, 0 100%); }
-    .horizon { position: absolute; right: -4%; bottom: 0; width: 116%; height: 112px; background: linear-gradient(90deg, rgba(7,45,75,.5), #0d5684); transform: skewY(-4deg); }
-    .coffee-vessel { position: absolute; z-index: 4; right: 18%; bottom: 36px; width: 192px; height: 274px; filter: drop-shadow(18px 22px 14px rgba(0,0,0,.22)); }
-    .vessel-neck { position: absolute; top: 0; left: 62px; width: 68px; height: 42px; border: 7px solid #b3e2ef; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(6,39,66,.62); }
-    .vessel-body { position: absolute; top: 33px; left: 18px; width: 150px; height: 212px; border: 7px solid #b3e2ef; border-radius: 31% 31% 42% 42% / 12% 12% 37% 37%; background: linear-gradient(90deg, rgba(30,112,151,.9), rgba(5,35,60,.9) 45%, rgba(83,167,198,.8)); overflow: hidden; }
-    .vessel-body::before { position: absolute; top: 15px; left: 0; width: 100%; height: 5px; background: rgba(197,237,244,.8); box-shadow: 0 48px rgba(197,237,244,.25), 0 95px rgba(197,237,244,.18), 0 145px rgba(197,237,244,.13); content: ""; }
-    .vessel-body::after { position: absolute; top: 5px; left: 48%; width: 24px; height: 200px; border-radius: 50%; background: rgba(218,247,251,.17); content: ""; }
-    .vessel-handle { position: absolute; right: 0; bottom: 49px; width: 62px; height: 98px; border: 10px solid #a9dce9; border-left: 0; border-radius: 0 53px 53px 0; }
-    .art-label { position: absolute; z-index: 5; right: 0; bottom: 64px; display: grid; gap: 3px; color: rgba(255,255,255,.73); font-size: 11px; letter-spacing: .1em; text-align: right; }
-    .art-label strong { color: var(--sky); font: 700 22px/1 "Playfair Display", serif; }
+    .story-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .pillar-card {
+      background: var(--cream);
+      border-left: 3px solid var(--leaf);
+      padding: 18px 20px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pillar-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      margin-bottom: 6px;
+    }
+    .pillar-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
 
-    /* Story */
-    .story { padding: 118px 0; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: 310px; height: 310px; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
-    .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
-    .seal::before { inset: 17px; }
-    .seal::after { inset: 44px; border-style: dashed; }
-    .seal-inner { position: relative; z-index: 1; display: grid; gap: 7px; text-align: center; }
-    .seal-inner b { font: 700 42px/1 "Playfair Display", serif; }
-    .seal-inner span { font-size: 13px; font-weight: 700; letter-spacing: .1em; }
-    .seal-inner small { font: 600 9px/1.5 "Playfair Display", serif; letter-spacing: .15em; }
-    .blue-note { position: absolute; right: 0; bottom: 0; width: 235px; padding: 27px 28px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .blue-note .eyebrow { margin-bottom: 9px; color: var(--sky); font-size: 9px; }
-    .blue-note p { margin: 0; font: 700 20px/1.55 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .story-copy p { margin: 19px 0 0; color: var(--muted); }
-    .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 700; }
-    .inline-link:hover { color: var(--navy); }
+    /* Section: Products Collection (#products) */
+    .products-section {
+      padding: 110px 0;
+      background: var(--mist-green);
+    }
+    .section-head-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 5px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+    }
+    .tab-btn {
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: all 0.25s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--forest);
+      color: #fff;
+    }
 
-    /* Coffee collection */
-    .coffee { padding: 111px 0 120px; background: var(--mist); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
-    .section-heading p { max-width: 370px; margin: 0; color: var(--muted); }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; display: flex; flex-direction: column; overflow: hidden; padding: 30px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -90px; bottom: -90px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; box-shadow: 0 0 0 27px rgba(255,255,255,.045), 0 0 0 65px rgba(255,255,255,.025); content: ""; }
-    .card-top, .coffee-card h3, .flavour, .card-footer { position: relative; z-index: 1; }
-    .card-top { color: var(--sky); font: 700 12px/1.3 "Playfair Display", serif; letter-spacing: .12em; }
-    .origin { margin: 25px 0 8px; color: rgba(255,255,255,.69); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
-    .coffee-card h3 { margin: 0; font: 700 26px/1.38 "Noto Serif TC", serif; letter-spacing: .04em; }
-    .flavour { margin: 15px 0 0; color: rgba(255,255,255,.73); font-size: 14px; }
-    .card-footer { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-top: auto; }
-    .price { font: 700 15px/1.3 "Playfair Display", serif; letter-spacing: .04em; }
-    .save-coffee { padding: 0 0 5px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); color: #fff; background: transparent; font-size: 13px; font-weight: 700; white-space: nowrap; transition: color .2s, border-color .2s; }
-    .save-coffee:hover { border-color: var(--sand); color: var(--sand); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .product-thumb {
+      height: 250px;
+      background: linear-gradient(135deg, var(--cream) 0%, #ecefe8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-thumb svg {
+      width: 120px;
+      height: 150px;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-thumb svg {
+      transform: scale(1.08);
+    }
+    .product-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--forest);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+    }
+    .product-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-category {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      color: var(--sage);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-family: "Noto Serif TC", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .product-scent-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .note-pill {
+      font-size: 11px;
+      background: var(--mist-green);
+      color: var(--forest);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .product-price {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--forest);
+    }
+    .btn-collect {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--forest);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--mist-green);
+      transition: all 0.2s;
+    }
+    .btn-collect:hover {
+      background: var(--forest);
+      color: #fff;
+    }
 
-    /* Brew */
-    .brew { padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
-    .brew-art { position: relative; height: 414px; overflow: hidden; background: linear-gradient(136deg, #e3f4f7 0 48%, #f8fcfc 48% 100%); }
-    .brew-art::before { position: absolute; top: 37px; left: 35px; width: 68px; height: 41px; border-top: 1px solid #6cb4ce; border-bottom: 1px solid #6cb4ce; content: ""; }
-    .brew-art::after { position: absolute; top: 57px; left: 35px; width: 43px; border-top: 1px solid #6cb4ce; content: ""; }
-    .water-rings { position: absolute; top: 67px; left: 50%; width: 245px; height: 245px; border: 1px solid rgba(12,91,149,.27); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 30px rgba(117,198,232,.12), 0 0 0 74px rgba(117,198,232,.065); }
-    .water-rings::before { position: absolute; top: 18px; left: 50%; width: 1px; height: 58px; background: #6bb8d1; content: ""; transform: translateX(-50%); }
-    .dripper { position: absolute; z-index: 2; top: 134px; left: 50%; width: 147px; height: 151px; border: 7px solid var(--blue); border-top: 0; background: linear-gradient(130deg, rgba(255,255,255,.85), rgba(117,198,232,.25)); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translateX(-50%); }
-    .dripper::after { position: absolute; right: 32px; bottom: 19px; left: 32px; height: 33px; border-top: 2px solid rgba(12,91,149,.55); border-bottom: 2px solid rgba(12,91,149,.35); content: ""; }
-    .carafe { position: absolute; z-index: 1; bottom: 56px; left: 50%; width: 139px; height: 106px; border: 6px solid var(--blue); border-radius: 16px 16px 45% 45%; background: rgba(117,198,232,.23); transform: translateX(-50%); }
-    .carafe::before { position: absolute; top: -28px; left: 29px; width: 70px; height: 28px; border: 6px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .brew-caption { position: absolute; right: 24px; bottom: 19px; color: var(--blue); text-align: right; }
-    .brew-caption span { display: block; font: 700 11px/1.5 "Playfair Display", serif; letter-spacing: .12em; }
-    .brew-caption strong { font: 700 24px/1.1 "Playfair Display", serif; }
-    .brew-copy > p { margin: 18px 0 25px; color: var(--muted); }
-    .brew-steps { border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 52px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .step-number { color: var(--blue); font: 700 24px/1 "Playfair Display", serif; }
-    .brew-step h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
-    .brew-step p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    /* Section: Scent Matcher Interactive (#matcher) */
+    .matcher-section {
+      padding: 110px 0;
+      background: #fff;
+    }
+    .matcher-card {
+      background: linear-gradient(145deg, var(--forest-dark) 0%, var(--forest) 100%);
+      border-radius: 24px;
+      padding: clamp(32px, 6vw, 64px);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      box-shadow: var(--shadow-hover);
+    }
+    .matcher-content .eyebrow {
+      color: var(--sprout);
+    }
+    .matcher-content h2 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .matcher-content p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .mood-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .mood-btn {
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      text-align: left;
+      font-size: 14px;
+      transition: all 0.25s;
+    }
+    .mood-btn strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+    .mood-btn small {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 11px;
+    }
+    .mood-btn:hover, .mood-btn.active {
+      background: var(--sprout);
+      color: var(--forest-dark);
+      border-color: var(--sprout);
+      transform: translateY(-2px);
+    }
+    .mood-btn.active small, .mood-btn:hover small {
+      color: var(--forest);
+    }
 
-    /* Subscribe and footer */
-    .visit { position: relative; overflow: hidden; padding: 108px 0 113px; color: #fff; text-align: center; background: var(--navy); }
-    .visit::before, .visit::after { position: absolute; width: 390px; height: 390px; border: 1px solid rgba(117,198,232,.17); border-radius: 50%; content: ""; }
-    .visit::before { top: -245px; left: -153px; box-shadow: 0 0 0 45px rgba(117,198,232,.035); }
-    .visit::after { right: -170px; bottom: -260px; box-shadow: 0 0 0 50px rgba(117,198,232,.035); }
-    .visit .wrap { position: relative; z-index: 1; max-width: 715px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit h2 { margin: 0; font: 800 clamp(30px, 4vw, 46px)/1.3 "Noto Serif TC", serif; letter-spacing: .045em; }
-    .visit p { max-width: 510px; margin: 19px auto 29px; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; min-height: 58px; border: 1px solid rgba(255,255,255,.62); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 0 18px; border: 0; color: #fff; outline: none; background: transparent; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.56); }
-    .subscribe-form button { padding: 0 23px; border: 0; color: var(--navy); background: var(--sand); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s; }
-    .subscribe-form button:hover { background: #f1cb8b; }
-    .site-footer { padding: 66px 0 23px; color: rgba(255,255,255,.68); background: #031c31; }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
-    .footer-brand .brand { margin-bottom: 16px; }
-    .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
-    .footer-links { display: grid; gap: 8px; font-size: 14px; }
-    .footer-links a:hover { color: var(--sky); }
-    .footer-links address { font-style: normal; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.44); font: 600 10px/1.5 "Playfair Display", serif; letter-spacing: .1em; }
+    .matcher-result-display {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 36px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 360px;
+      transition: opacity 0.3s ease;
+    }
+    .result-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+    .result-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .result-pairing {
+      color: var(--sand-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .result-text {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 320px;
+      margin-bottom: 20px;
+    }
 
-    .toast { position: fixed; z-index: 50; right: 22px; bottom: 22px; max-width: min(370px, calc(100vw - 44px)); padding: 14px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); font-size: 14px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Section: Ritual & Care Guide (#ritual) */
+    .ritual-section {
+      padding: 110px 0;
+      background: var(--cream);
+    }
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .ritual-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .ritual-step {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--leaf);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .ritual-card h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      margin-bottom: 12px;
+    }
+    .ritual-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* Section: Newsletter (#visit) */
+    .newsletter-section {
+      position: relative;
+      background: var(--forest-dark);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .newsletter-section::before, .newsletter-section::after {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgba(181, 204, 173, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .newsletter-section::before {
+      top: -200px;
+      left: -150px;
+      box-shadow: 0 0 0 60px rgba(181, 204, 173, 0.03);
+    }
+    .newsletter-section::after {
+      bottom: -220px;
+      right: -150px;
+      box-shadow: 0 0 0 80px rgba(181, 204, 173, 0.02);
+    }
+    .newsletter-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .newsletter-wrap .eyebrow {
+      color: var(--sprout);
+      justify-content: center;
+    }
+    .newsletter-wrap h2 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(28px, 3.8vw, 42px);
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .newsletter-wrap p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+    .subscribe-form {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 40px;
+      padding: 6px;
+      transition: border-color 0.25s;
+    }
+    .subscribe-form:focus-within {
+      border-color: var(--leaf);
+    }
+    .subscribe-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .subscribe-form input::placeholder {
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .subscribe-form button {
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: var(--sprout);
+      color: var(--forest-dark);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transition: all 0.25s;
+    }
+    .subscribe-form button:hover {
+      background: #cce0c4;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #0d1a13;
+      color: rgba(255, 255, 255, 0.65);
+      padding: 80px 0 30px;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .footer-col h4 {
+      color: #fff;
+      font-family: "Noto Serif TC", serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a:hover {
+      color: var(--sprout);
+    }
+    .footer-brand p {
+      margin-top: 16px;
+      line-height: 1.8;
+      max-width: 320px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 999;
+      background: var(--forest-dark);
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--leaf);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding-top: 110px;
+        min-height: auto;
+      }
+      .hero-art {
+        height: 380px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .matcher-card {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-badge-frame {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+    }
 
     @media (max-width: 820px) {
-      .menu-toggle { display: grid; place-items: center; }
-      .nav { position: relative; }
-      .nav-links { position: absolute; top: 78px; right: -24px; left: -24px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #05233c; transition: max-height .35s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.16); }
-      .nav-links a { display: block; padding: 13px 24px; }
-      .nav-links .nav-cta { margin: 5px 24px 15px; padding: 10px 13px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { min-height: 710px; grid-template-columns: 1fr; gap: 0; padding: 118px 0 43px; }
-      .hero-art { min-height: 276px; margin-top: -9px; }
-      .hero-art .sun { top: 19px; right: 20%; width: 130px; }
-      .mountain { height: 180px; }
-      .mountain--back { bottom: 69px; height: 150px; }
-      .coffee-vessel { right: 17%; bottom: -12px; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { display: none; }
-      .scroll-cue { display: none; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 525px; width: 100%; min-height: 400px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: absolute;
+        top: 84px;
+        left: 0;
+        right: 0;
+        background: var(--forest-dark);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 24px;
+        max-height: 0;
+        overflow: hidden;
+        gap: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: max-height 0.35s ease, padding 0.35s ease;
+      }
+      .nav-links.open {
+        max-height: 340px;
+        padding: 20px 24px;
+      }
+      .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .nav-links .nav-cta {
+        margin-top: 12px;
+        text-align: center;
+      }
     }
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .nav-links { right: -17px; left: -17px; }
-      .hero { min-height: 680px; }
-      .hero-grid { min-height: 680px; padding-top: 106px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { font-size: 14px; }
-      .hero-actions { gap: 9px; margin-top: 24px; }
-      .hero-actions .button, .hero-actions .outline-link { min-height: 46px; padding: 8px 15px; font-size: 13px; }
-      .hero-note { margin-top: 21px; }
-      .hero-art { min-height: 219px; }
-      .hero-art .sun { width: 92px; }
-      .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
-      .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: 245px; height: 245px; }
-      .seal-inner b { font-size: 35px; }
-      .story-visual { min-height: 347px; }
-      .blue-note { width: 185px; padding: 20px; }
-      .blue-note p { font-size: 16px; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading p { margin-top: 14px; font-size: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .coffee-card { padding: 25px; }
-      .brew-art { height: 310px; }
-      .water-rings { top: 45px; width: 178px; height: 178px; box-shadow: 0 0 0 23px rgba(117,198,232,.12), 0 0 0 53px rgba(117,198,232,.065); }
-      .dripper { top: 95px; transform: translateX(-50%) scale(.75); }
-      .carafe { bottom: 37px; transform: translateX(-50%) scale(.75); }
-      .visit { padding: 76px 0; }
-      .subscribe-form { display: grid; gap: 0; border: 0; }
-      .subscribe-form input { min-height: 54px; border: 1px solid rgba(255,255,255,.62); }
-      .subscribe-form button { min-height: 54px; margin-top: 10px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 33px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 8px; }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: calc(100% - 32px);
+      }
+      .products-grid, .ritual-grid {
+        grid-template-columns: 1fr;
+      }
+      .mood-options {
+        grid-template-columns: 1fr;
+      }
+      .subscribe-form {
+        flex-direction: column;
+        border-radius: var(--radius);
+        background: transparent;
+        border: none;
+        padding: 0;
+        gap: 10px;
+      }
+      .subscribe-form input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: var(--radius);
+        padding: 14px 18px;
+      }
+      .subscribe-form button {
+        border-radius: var(--radius);
+        padding: 14px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .float-card {
+        display: none;
+      }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
       .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Site Navigation -->
   <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
+    <nav class="wrap nav" aria-label="主要導覽">
+      <a class="brand" href="#top" aria-label="回到質感時光首頁">
+        <div class="brand-logo" aria-hidden="true">
+          <!-- Leaf Monogram SVG -->
+          <svg viewBox="0 0 24 24">
+            <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">質感時光</span>
+          <span class="brand-en">QUALITY TIME · BOTANICALS</span>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+      <button class="menu-toggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
+
+      <div class="nav-links" id="primaryNav">
+        <a href="#about">品牌理念</a>
+        <a href="#relax">靜心呼吸引導</a>
+        <a href="#products">植物與香氛</a>
+        <a href="#matcher">心境香氛測驗</a>
+        <a href="#ritual">綠意日常指南</a>
+        <a class="nav-cta" href="#newsletter">訂閱時光通訊</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="heroTitle">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="heroMainTitle">
+      <div class="hero-rings" aria-hidden="true"></div>
       <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
+        <div class="hero-content">
+          <p class="eyebrow">Natural Botanicals & Ambient Living</p>
+          <h1 class="hero-title" id="heroMainTitle">
+            在綠意與香氣中，<br>找回<span>心靈的靜謐</span>。
+          </h1>
+          <p class="hero-lede">
+            質感時光專注於天然植物精油香氛與室內觀葉植物的共生美學。為嚮往大自然、注重生活儀式感的你，卸下一整天的喧囂與緊繃，讓每一次呼吸都沉靜安穩。
+          </p>
           <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="outline-link" href="#story">認識藍天</a>
+            <a class="btn btn-primary" href="#products">探索植癒系列 →</a>
+            <a class="btn btn-outline" href="#relax">體驗一分鐘放鬆</a>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
-          <span class="scroll-cue">SCROLL TO DISCOVER</span>
+          <div class="hero-badges">
+            <div class="badge-item">
+              <span class="badge-icon">🌿</span>
+              <span>100% 天然植萃精油</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">🪴</span>
+              <span>友善淨化室內觀葉植物</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">🕯️</span>
+              <span>無毒大豆植萃工藝</span>
+            </div>
+          </div>
         </div>
+
         <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain--back"></div>
-          <div class="mountain"></div>
-          <div class="horizon"></div>
-          <div class="coffee-vessel"><div class="vessel-neck"></div><div class="vessel-body"></div><div class="vessel-handle"></div></div>
-          <div class="art-label"><strong>92°C</strong><span>理想水溫</span><span>細細喚醒香氣</span></div>
-        </div>
-      </div>
-    </section>
+          <div class="art-card-main">
+            <!-- Botanical SVG Illustration (Monstera & Essential Oil Dropper) -->
+            <svg class="botanical-illustration" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Leaf stem -->
+              <path d="M100 230 C95 180 85 110 50 40" stroke="#82a377" stroke-width="4" stroke-linecap="round"/>
+              <!-- Monstera large leaf left -->
+              <path d="M50 40 C30 50 15 75 18 105 C20 125 35 140 55 145 C50 135 48 120 54 110 C62 95 75 105 78 125 C88 115 90 98 82 85 C75 75 62 70 50 40 Z" fill="#b5ccad" opacity="0.9"/>
+              <!-- Monstera large leaf right -->
+              <path d="M100 180 C130 160 165 145 175 115 C185 85 165 55 130 45 C125 65 135 80 128 95 C120 110 108 95 110 80 C100 95 95 115 100 135 Z" fill="#587b64" opacity="0.95"/>
+              <!-- Central diffuser bottle silhouette -->
+              <rect x="75" y="140" width="50" height="75" rx="8" fill="#faf9f4" stroke="#c79e67" stroke-width="2"/>
+              <rect x="90" y="125" width="20" height="15" rx="2" fill="#c79e67"/>
+              <path d="M100 125 L100 80" stroke="#c79e67" stroke-width="3" stroke-linecap="round"/>
+              <path d="M96 125 L75 85" stroke="#c79e67" stroke-width="2" stroke-linecap="round"/>
+              <path d="M104 125 L125 85" stroke="#c79e67" stroke-width="2" stroke-linecap="round"/>
+              <!-- Ambient scent ripples -->
+              <circle cx="100" cy="70" r="14" stroke="#ecdcb9" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <circle cx="100" cy="70" r="28" stroke="#ecdcb9" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+            </svg>
+            <h2 class="art-title">綠意・芳息・靜心</h2>
+            <p class="art-sub">TRANQUIL HOME RITUAL</p>
+          </div>
 
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="seal"><div class="seal-inner"><b>B</b><span>慢一點，更清楚。</span><small>LET THE FLAVOUR SPEAK</small></div></div>
-          <aside class="blue-note"><p class="eyebrow">BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></aside>
-        </div>
-        <div class="story-copy reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="text-blue">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="inline-link" href="#brew">看看我們如何沖煮 <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
+          <!-- Floating badge 1 -->
+          <div class="float-card float-card-1">
+            <div class="float-icon">🌱</div>
+            <div class="float-meta">
+              <strong>室內芬多精</strong>
+              <small>提升 68% 空間專注與平靜感</small>
+            </div>
+          </div>
 
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="text-blue">藍天</span>？</h2></div>
-          <p>三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="card-top">01 / BRIGHT</div><p class="origin">ETHIOPIA · YIRGACHEFFE</p><h3>衣索比亞・耶加雪菲</h3><p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-coffee" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">02 / JUICY</div><p class="origin">KENYA · KIRINYAGA</p><h3>肯亞・祈安布</h3><p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-coffee" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">03 / ROUND</div><p class="origin">COLOMBIA · HUILA</p><h3>哥倫比亞・慧蘭</h3><p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="card-footer"><span class="price">NT$ 460 / 200g</span><button class="save-coffee" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true"><div class="water-rings"></div><div class="dripper"></div><div class="carafe"></div><div class="brew-caption"><span>V60 / 15G : 240ML</span><strong>2'45''</strong></div></div>
-        <div class="brew-copy reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="text-blue">自己的話</span>。</h2>
-          <p>不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-number">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-number">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-number">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
+          <!-- Floating badge 2 -->
+          <div class="float-card float-card-2">
+            <div class="float-icon">✨</div>
+            <div class="float-meta">
+              <strong>沉浸舒壓模式</strong>
+              <small>大西洋雪松 × 真正薰衣草</small>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
+    <!-- Interactive Breathing / Relaxation Room (放鬆心情核心功能) -->
+    <section class="relax-room" id="relax" aria-labelledby="relaxTitle">
+      <div class="wrap relax-container">
+        <p class="eyebrow">Mindful Pause</p>
+        <h2 class="section-title" id="relaxTitle">一分鐘・<span>舒緩靜心</span>練習</h2>
+        <p class="section-desc" style="margin-inline: auto;">
+          當生活節奏過快、思緒紛亂時，跟隨光圈的收放進行深層腹式呼吸。讓綠植的意象與植物氣息撫平神經，找回內在的從容。
+        </p>
+
+        <div class="relax-card reveal">
+          <div class="breathing-box">
+            <div class="breath-circle" id="breathCircle"></div>
+            <div>
+              <div class="breath-text" id="breathInstruction">點擊開始</div>
+              <div class="breath-timer" id="breathTimer">放慢呼吸節奏</div>
+            </div>
+          </div>
+
+          <div class="breath-controls">
+            <button class="btn btn-primary" id="startBreathBtn" type="button">開始靜心呼吸</button>
+            <button class="btn btn-relax" id="resetBreathBtn" type="button">重置</button>
+          </div>
+
+          <p style="margin-top: 24px; font-size: 13.5px; color: var(--muted);">
+            💡 建議閉上雙眼或注視柔和綠圈：吸氣 4 秒 → 屏息 4 秒 → 吐氣 6 秒，重複三個循環。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Philosophy (#about) -->
+    <section class="story-section" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap story-grid">
+        <div class="story-visual-wrap reveal">
+          <div class="story-badge-frame">
+            <!-- Calming Leaf & Droplet SVG -->
+            <svg viewBox="0 0 200 240" fill="none">
+              <circle cx="100" cy="110" r="85" fill="#f4f1e8"/>
+              <path d="M100 30 C125 70 155 110 155 140 C155 170 130 195 100 195 C70 195 45 170 45 140 C45 110 75 70 100 30 Z" fill="#587b64" opacity="0.85"/>
+              <path d="M100 55 C118 85 140 115 140 138 C140 160 122 178 100 178 C78 178 60 160 60 138 C60 115 82 85 100 55 Z" fill="#82a377" opacity="0.9"/>
+              <path d="M100 55 L100 178" stroke="#faf9f4" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M100 100 L125 120" stroke="#faf9f4" stroke-width="2" stroke-linecap="round"/>
+              <path d="M100 130 L75 150" stroke="#faf9f4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="story-quote-card">
+            <p>「植物不會催促你，香氣亦然。好的生活，是給自己留一段微風吹拂的時間。」</p>
+            <span>── 質感時光 理念宣言</span>
+          </div>
+        </div>
+
+        <div class="story-content reveal">
+          <p class="eyebrow">Our Philosophy</p>
+          <h2 class="section-title" id="aboutTitle">以自然之名，為日常注入<span>溫柔的秩序</span></h2>
+          <p class="section-desc">
+            身處繁忙都市，我們總渴望有一處能卸下武裝的角落。「質感時光」誕生於對純淨自然的嚮往，我們相信植物的靜默守護與天然精油的溫柔氣息，能撫平焦慮、喚醒生活的感知。
+          </p>
+
+          <div class="story-pillars">
+            <div class="pillar-card">
+              <h3>純淨植萃香氛</h3>
+              <p>無人工合成定香劑、無石化溶劑。萃取自天然花草、木質與樹脂，還原大自然的原生芬芳。</p>
+            </div>
+            <div class="pillar-card">
+              <h3>室內觀葉美學</h3>
+              <p>精選耐陰、好照料且具空氣淨化能力的觀葉植物，為居家與辦公案頭點綴療癒綠意。</p>
+            </div>
+            <div class="pillar-card">
+              <h3>生活儀式感</h3>
+              <p>點燃一顆蠟燭、輕轉擴香竹枝、修剪一片枯葉，在瑣碎日常中建立屬於自己的安穩儀式。</p>
+            </div>
+            <div class="pillar-card">
+              <h3>永續友善環境</h3>
+              <p>採用可回收玻璃器皿、大豆蠟與環保包材，珍惜土地給予的每一份寧靜餽贈。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Showcase (#products) -->
+    <section class="products-section" id="products" aria-labelledby="productsTitle">
+      <div class="wrap">
+        <div class="section-head-flex reveal">
+          <div>
+            <p class="eyebrow">Botanical Collection</p>
+            <h2 class="section-title" id="productsTitle">選品系列・<span>植物與香氛</span></h2>
+            <p class="section-desc">每一款香氛與植株，皆經過悉心調和與馴化，陪伴你度過恬靜時光。</p>
+          </div>
+
+          <div class="filter-tabs" role="tablist" aria-label="商品分類切換">
+            <button class="tab-btn active" type="button" data-filter="all">全部選品</button>
+            <button class="tab-btn" type="button" data-filter="scent">天然香氛</button>
+            <button class="tab-btn" type="button" data-filter="plant">室內觀葉</button>
+          </div>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <article class="product-card reveal" data-category="scent">
+            <div class="product-thumb">
+              <span class="product-tag">熱銷推薦</span>
+              <!-- Diffuser SVG -->
+              <svg viewBox="0 0 140 180" fill="none">
+                <rect x="45" y="90" width="50" height="70" rx="8" fill="#1b382b"/>
+                <rect x="58" y="76" width="24" height="15" rx="3" fill="#c79e67"/>
+                <path d="M70 76 L70 20" stroke="#966b43" stroke-width="3" stroke-linecap="round"/>
+                <path d="M66 76 L40 25" stroke="#966b43" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M74 76 L100 25" stroke="#966b43" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="70" cy="125" r="16" fill="rgba(255,255,255,0.15)"/>
+                <text x="70" y="130" text-anchor="middle" fill="#fff" font-size="10" font-family="'Cormorant Garamond', serif">01</text>
+              </svg>
+            </div>
+            <div class="product-body">
+              <span class="product-category">BOTANICAL DIFFUSER</span>
+              <h3 class="product-name">森林之晨・植萃擴香瓶</h3>
+              <p class="product-desc">前調清冷杜松漿果，中調揉合大西洋雪松與尤加利，如晨曦初穿過深林般的清透空靈。</p>
+              <div class="product-scent-notes">
+                <span class="note-pill">大西洋雪松</span>
+                <span class="note-pill">藍膠尤加利</span>
+                <span class="note-pill">西西里佛手柑</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">NT$ 1,280 / 180ml</span>
+                <button class="btn-collect" type="button" data-item="森林之晨・植萃擴香瓶">收藏香氛 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card reveal" data-category="plant">
+            <div class="product-thumb">
+              <span class="product-tag">淨化空氣</span>
+              <!-- Monstera Plant SVG -->
+              <svg viewBox="0 0 140 180" fill="none">
+                <!-- Ceramic Pot -->
+                <path d="M40 120 L48 165 C49 170 53 174 58 174 L82 174 C87 174 91 170 92 165 L100 120 Z" fill="#e8dfcf" stroke="#c8bcab" stroke-width="2"/>
+                <ellipse cx="70" cy="120" rx="30" ry="7" fill="#8d745a"/>
+                <!-- Monstera Stem and Leaf -->
+                <path d="M70 120 C70 90 60 60 40 30" stroke="#587b64" stroke-width="3" stroke-linecap="round"/>
+                <path d="M40 30 C25 45 20 65 30 80 C36 88 45 80 50 70 C48 85 62 85 68 75 C70 65 65 50 40 30 Z" fill="#587b64"/>
+                <path d="M70 100 C85 80 110 65 110 35" stroke="#82a377" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M110 35 C115 50 110 65 95 75 C90 60 85 70 80 60 C85 50 95 40 110 35 Z" fill="#82a377"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <span class="product-category">INDOOR FOLIAGE</span>
+              <h3 class="product-name">窗孔龜背芋・手感陶盆組</h3>
+              <p class="product-desc">天然葉片開孔別緻優美，具備卓越的室內耐陰度與甲醛淨化能力，附專屬接水陶盤。</p>
+              <div class="product-scent-notes">
+                <span class="note-pill">半日照耐陰</span>
+                <span class="note-pill">每週澆水一次</span>
+                <span class="note-pill">附手作陶盆</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">NT$ 980 / 盆</span>
+                <button class="btn-collect" type="button" data-item="窗孔龜背芋・手感陶盆組">收藏植栽 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card reveal" data-category="scent">
+            <div class="product-thumb">
+              <span class="product-tag">舒眠首選</span>
+              <!-- Candle SVG -->
+              <svg viewBox="0 0 140 180" fill="none">
+                <rect x="42" y="80" width="56" height="85" rx="6" fill="#f4f1e8" stroke="#d8e2d6" stroke-width="2"/>
+                <ellipse cx="70" cy="80" rx="28" ry="7" fill="#ece6d8"/>
+                <!-- Wick and Flame -->
+                <line x1="70" y1="80" x2="70" y2="65" stroke="#555" stroke-width="2"/>
+                <path d="M70 45 C65 55 64 62 70 66 C76 62 75 55 70 45 Z" fill="#c79e67"/>
+                <circle cx="70" cy="58" r="3" fill="#ffe9a0"/>
+                <text x="70" y="130" text-anchor="middle" fill="#587b64" font-size="9" font-family="'Noto Serif TC', serif">SOY WAX</text>
+              </svg>
+            </div>
+            <div class="product-body">
+              <span class="product-category">SOY SCENTED CANDLE</span>
+              <h3 class="product-name">暮色靜謐・大豆芳香蠟燭</h3>
+              <p class="product-desc">法國真正薰衣草搭配安息香與乳香，燃燒純淨無黑煙，溫柔撫慰勞頓一天的疲憊神經。</p>
+              <div class="product-scent-notes">
+                <span class="note-pill">法國高地薰衣草</span>
+                <span class="note-pill">安息香</span>
+                <span class="note-pill">大豆植物蠟</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">NT$ 850 / 200g</span>
+                <button class="btn-collect" type="button" data-item="暮色靜謐・大豆芳香蠟燭">收藏香氛 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card reveal" data-category="plant">
+            <div class="product-thumb">
+              <span class="product-tag">空氣之王</span>
+              <!-- Snake Plant SVG -->
+              <svg viewBox="0 0 140 180" fill="none">
+                <path d="M45 125 L50 168 C51 172 54 175 58 175 L82 175 C86 175 89 172 90 168 L95 125 Z" fill="#2b503e"/>
+                <!-- Leaves -->
+                <path d="M70 125 C68 90 55 50 62 20 C68 50 78 90 70 125 Z" fill="#82a377" stroke="#c79e67" stroke-width="1"/>
+                <path d="M60 125 C50 100 40 70 45 40 C52 70 65 95 60 125 Z" fill="#587b64" stroke="#c79e67" stroke-width="1"/>
+                <path d="M80 125 C90 100 100 70 95 40 C88 70 75 95 80 125 Z" fill="#587b64" stroke="#c79e67" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <span class="product-category">INDOOR FOLIAGE</span>
+              <h3 class="product-name">金邊虎尾蘭・極簡泥盆</h3>
+              <p class="product-desc">夜間亦能持續釋放負離子與氧氣，被譽為「天然空氣清淨機」，極低養護門檻。</p>
+              <div class="product-scent-notes">
+                <span class="note-pill">超強耐旱</span>
+                <span class="note-pill">夜間釋氧</span>
+                <span class="note-pill">泥作質感盆器</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">NT$ 720 / 盆</span>
+                <button class="btn-collect" type="button" data-item="金邊虎尾蘭・極簡泥盆">收藏植栽 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="product-card reveal" data-category="scent">
+            <div class="product-thumb">
+              <span class="product-tag">隨身香氣</span>
+              <!-- Mist Spray SVG -->
+              <svg viewBox="0 0 140 180" fill="none">
+                <rect x="52" y="70" width="36" height="95" rx="6" fill="#1b382b"/>
+                <rect x="58" y="55" width="24" height="15" fill="#c79e67"/>
+                <path d="M64 45 L76 45 L76 55 L64 55 Z" fill="#12241b"/>
+                <path d="M60 48 L52 48" stroke="#12241b" stroke-width="2"/>
+                <!-- Spray particles -->
+                <circle cx="40" cy="46" r="2" fill="#c79e67"/>
+                <circle cx="34" cy="42" r="1.5" fill="#82a377"/>
+                <circle cx="32" cy="52" r="1.5" fill="#82a377"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <span class="product-category">ROOM & PILLOW MIST</span>
+              <h3 class="product-name">月光織境・枕頭舒壓噴霧</h3>
+              <p class="product-desc">睡前輕噴於枕巾與床簾，羅馬洋甘菊與苦橙葉輕盈散開，引導大腦平穩步入深層安眠。</p>
+              <div class="product-scent-notes">
+                <span class="note-pill">羅馬洋甘菊</span>
+                <span class="note-pill">苦橙葉</span>
+                <span class="note-pill">有機穀物酒精</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">NT$ 690 / 100ml</span>
+                <button class="btn-collect" type="button" data-item="月光織境・枕頭舒壓噴霧">收藏香氛 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product-card reveal" data-category="plant">
+            <div class="product-thumb">
+              <span class="product-tag">空間主角</span>
+              <!-- Fiddle Leaf Fig SVG -->
+              <svg viewBox="0 0 140 180" fill="none">
+                <path d="M42 130 L48 168 C49 172 53 175 58 175 L82 175 C87 175 91 172 92 168 L98 130 Z" fill="#f4f1e8" stroke="#c8bcab"/>
+                <!-- Main trunk -->
+                <path d="M70 130 L70 30" stroke="#8d745a" stroke-width="3.5" stroke-linecap="round"/>
+                <!-- Fiddle leaves -->
+                <path d="M70 95 C50 90 40 75 42 60 C50 65 60 75 70 85 Z" fill="#587b64"/>
+                <path d="M70 80 C90 75 100 60 98 45 C90 50 80 60 70 70 Z" fill="#587b64"/>
+                <path d="M70 45 C50 35 45 20 55 10 C65 20 70 30 70 45 Z" fill="#82a377"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <span class="product-category">INDOOR FOLIAGE</span>
+              <h3 class="product-name">琴葉榕・雅緻落地中盆</h3>
+              <p class="product-desc">提琴造型的大器葉脈，為客廳或書房創造沉著穩定的視覺焦點，帶來如置身溫室般的安心感。</p>
+              <div class="product-scent-notes">
+                <span class="note-pill">明亮散光環境</span>
+                <span class="note-pill">空氣淨化效能佳</span>
+                <span class="note-pill">附編織籃外盆</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">NT$ 1,680 / 盆</span>
+                <button class="btn-collect" type="button" data-item="琴葉榕・雅緻落地中盆">收藏植栽 ＋</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Scent & Plant Matcher (#matcher) -->
+    <section class="matcher-section" id="matcher" aria-labelledby="matcherTitle">
+      <div class="wrap">
+        <div class="matcher-card reveal">
+          <div class="matcher-content">
+            <p class="eyebrow">Personal Scent Pairing</p>
+            <h2 id="matcherTitle">今天，你的心靈想去哪片森林？</h2>
+            <p>點選你當下的心境渴望，我們將為你調配最契合的植物香氛與綠意處方：</p>
+
+            <div class="mood-options">
+              <button class="mood-btn active" type="button" data-mood="calm">
+                <strong>🌊 焦慮緊繃・亟需平靜</strong>
+                <small>釋放壓力、沉澱思緒</small>
+              </button>
+              <button class="mood-btn" type="button" data-mood="sleep">
+                <strong>🌙 夜幕低垂・渴望好眠</strong>
+                <small>安穩身心、深層入夢</small>
+              </button>
+              <button class="mood-btn" type="button" data-mood="focus">
+                <strong>💡 昏沉疲憊・喚醒專注</strong>
+                <small>釐清雜念、提升靈感</small>
+              </button>
+              <button class="mood-btn" type="button" data-mood="nature">
+                <strong>🍃 嚮往山林・深呼吸療癒</strong>
+                <small>草木芬多精、擁抱自然</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="matcher-result-display" id="matcherResult" aria-live="polite">
+            <div class="result-icon" id="resIcon">🌿</div>
+            <h3 class="result-title" id="resTitle">雪松與岩蘭草靜心處方</h3>
+            <div class="result-pairing" id="resPairing">大西洋雪松 × 窗孔龜背芋</div>
+            <p class="result-text" id="resText">
+              深沉的木質香氣具有強大的「接地」力量，能安撫因緊繃而浮動的心神；搭配舒展綠葉的靜默陪伴，為你築起不受打擾的避風港。
+            </p>
+            <button class="btn btn-sand btn-collect" id="resBtn" type="button" data-item="雪松與岩蘭草靜心處方">
+              收藏專屬配方 →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Rituals Guide (#ritual) -->
+    <section class="ritual-section" id="ritual" aria-labelledby="ritualTitle">
+      <div class="wrap">
+        <div style="text-align: center; max-width: 620px; margin: 0 auto;" class="reveal">
+          <p class="eyebrow" style="justify-content: center;">Living Ritual</p>
+          <h2 class="section-title" id="ritualTitle">如何用綠意與香氣，<span>過好每一個日常</span></h2>
+          <p class="section-desc" style="margin-inline: auto;">
+            不需要繁複的儀式，僅需三個微小的生活習慣，便能在家中隨時擁抱大自然。
+          </p>
+        </div>
+
+        <div class="ritual-grid">
+          <div class="ritual-card reveal">
+            <span class="ritual-step">01</span>
+            <h3>晨間甦醒・與植物互道早安</h3>
+            <p>清晨拉開窗簾，讓第一道晨光灑在窗邊綠葉上。深吸一口帶有朝露氣息的空氣，為龜背芋或琴葉榕噴灑細霧水，開啟專注而平靜的一天。</p>
+          </div>
+
+          <div class="ritual-card reveal">
+            <span class="ritual-step">02</span>
+            <h3>午後沉浸・轉換工作場域心境</h3>
+            <p>下午辦公注意力渙散時，點上帶有佛手柑或迷迭香的擴香，凝視桌角小巧的虎尾蘭三分鐘，讓綠色光譜放鬆緊繃的雙眼與神經。</p>
+          </div>
+
+          <div class="ritual-card reveal">
+            <span class="ritual-step">03</span>
+            <h3>睡前收束・點亮燭光的靜謐</h3>
+            <p>睡前半小時熄去刺眼的大燈，僅留一盞暖黃閱讀燈與薰衣草大豆蠟燭。在天然植萃微光中閱讀或冥想，向一整天的辛勞溫柔道別。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA (#newsletter) -->
+    <section class="newsletter-section" id="newsletter" aria-labelledby="newsletterTitle">
+      <div class="wrap newsletter-wrap reveal">
+        <p class="eyebrow">Tranquil Newsletter</p>
+        <h2 id="newsletterTitle">把下一抹綠意與香氣，<br>寄到你的日常信箱裡</h2>
+        <p>
+          每兩週發送一封「時光綠意札記」。與你分享植物養護心得、季節節氣香氛處方，以及會員專屬的微型香氛體驗組抽獎。
+        </p>
+
         <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="your@email.com" required>
-          <button type="submit">訂閱風味通信</button>
+          <input type="email" placeholder="輸入您的電子信箱 (例：nature@qualitytime.tw)" aria-label="電子郵件地址" required>
+          <button type="submit">訂閱時光札記</button>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
-    </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
-  </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
+      <div class="footer-col footer-brand">
+        <a class="brand" href="#top" aria-label="回到質感時光首頁">
+          <div class="brand-logo" aria-hidden="true" style="width: 32px; height: 32px;">
+            <svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" style="font-size: 17px;">質感時光</span>
+            <span class="brand-en">QUALITY TIME</span>
+          </div>
+        </a>
+        <p>
+          推廣天然植物香氛與室內觀葉植物品牌。為嚮往大自然、注重生活儀式感的你，留下一段放慢腳步、深層呼吸的靜謐時光。
+        </p>
+      </div>
 
+      <div class="footer-col">
+        <h4>探索品牌</h4>
+        <ul>
+          <li><a href="#about">品牌理念與堅持</a></li>
+          <li><a href="#relax">一分鐘靜心呼吸</a></li>
+          <li><a href="#products">植物與香氛系列</a></li>
+          <li><a href="#matcher">心境調香配對</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>植療日常</h4>
+        <ul>
+          <li><a href="#ritual">綠意生活指南</a></li>
+          <li><a href="#newsletter">訂閱時光通訊</a></li>
+          <li><a href="#products">觀葉植物換盆建議</a></li>
+          <li><a href="#products">天然精油擴香保養</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>綠意體驗所</h4>
+        <ul>
+          <li>門市：台中市西屯區僑光路 100 號</li>
+          <li>信箱：<a href="mailto:contact@qualitytime.tw">contact@qualitytime.tw</a></li>
+          <li>時間：週二至週日 11:00 — 19:30</li>
+          <li>空間預約：每週末香氛手作與換盆沙龍</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>© 2026 質感時光 QUALITY TIME BOTANICALS. ALL RIGHTS RESERVED.</span>
+      <span>BREATHE DEEP · EMBRACE NATURE · LIVE MINDFULLY</span>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Box -->
+  <div class="toast" id="siteToast" role="status" aria-live="polite"></div>
+
+  <!-- Interactive JavaScript -->
   <script>
     (() => {
-      const menuButton = document.querySelector('.menu-toggle');
+      // 1. Mobile Menu Toggle
+      const menuBtn = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
-      const toast = document.querySelector('.toast');
-      let toastTimer;
 
-      const closeMenu = () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', '開啟導覽選單');
-        menuButton.textContent = '☰';
+      const toggleNav = () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.setAttribute('aria-label', isOpen ? '關閉導覽選單' : '開啟導覽選單');
+        menuBtn.textContent = isOpen ? '✕' : '☰';
       };
-      menuButton.addEventListener('click', () => {
-        const opening = !navLinks.classList.contains('open');
-        navLinks.classList.toggle('open', opening);
-        menuButton.setAttribute('aria-expanded', String(opening));
-        menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
-        menuButton.textContent = opening ? '×' : '☰';
-      });
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-      const showToast = message => {
+      menuBtn.addEventListener('click', toggleNav);
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('open')) {
+            toggleNav();
+          }
+        });
+      });
+
+      // 2. Toast System
+      const toast = document.getElementById('siteToast');
+      let toastTimer = null;
+
+      const showToast = (message, icon = '🌿') => {
+        if (!toast) return;
         clearTimeout(toastTimer);
-        toast.textContent = message;
+        toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
         toast.classList.add('show');
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
       };
-      document.querySelectorAll('[data-coffee]').forEach(button => {
-        button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
-      });
-      document.querySelector('#subscribeForm').addEventListener('submit', event => {
-        event.preventDefault();
-        event.currentTarget.reset();
-        showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
+
+      // Collection Buttons
+      document.querySelectorAll('.btn-collect').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.dataset.item || '品項';
+          showToast(`已將「${item}」加入您的靜心收藏清單。`, '✨');
+        });
       });
 
+      // 3. Product Category Filter
+      const filterBtns = document.querySelectorAll('.tab-btn');
+      const productCards = document.querySelectorAll('.product-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          productCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 4. Mindful Breathing Exercise (放鬆功能)
+      const startBreathBtn = document.getElementById('startBreathBtn');
+      const resetBreathBtn = document.getElementById('resetBreathBtn');
+      const breathCircle = document.getElementById('breathCircle');
+      const breathInstruction = document.getElementById('breathInstruction');
+      const breathTimer = document.getElementById('breathTimer');
+
+      let breathInterval = null;
+      let isBreathing = false;
+
+      const runBreathingCycle = () => {
+        // Step 1: Inhale 4s
+        breathCircle.className = 'breath-circle inhale';
+        breathInstruction.textContent = '吸氣⋯⋯';
+        breathTimer.textContent = '感受草木清新空氣湧入 (4秒)';
+
+        setTimeout(() => {
+          if (!isBreathing) return;
+          // Step 2: Hold 4s
+          breathCircle.className = 'breath-circle hold';
+          breathInstruction.textContent = '屏息⋯⋯';
+          breathTimer.textContent = '讓身心沉靜充盈 (4秒)';
+
+          setTimeout(() => {
+            if (!isBreathing) return;
+            // Step 3: Exhale 6s
+            breathCircle.className = 'breath-circle exhale';
+            breathInstruction.textContent = '呼氣⋯⋯';
+            breathTimer.textContent = '吐出一切疲勞與雜念 (6秒)';
+          }, 4000);
+        }, 4000);
+      };
+
+      const startBreathing = () => {
+        if (isBreathing) return;
+        isBreathing = true;
+        startBreathBtn.textContent = '靜心中⋯';
+        startBreathBtn.disabled = true;
+        runBreathingCycle();
+        breathInterval = setInterval(runBreathingCycle, 14000); // 4 + 4 + 6 = 14s cycle
+      };
+
+      const resetBreathing = () => {
+        isBreathing = false;
+        clearInterval(breathInterval);
+        breathCircle.className = 'breath-circle';
+        breathInstruction.textContent = '準備就緒';
+        breathTimer.textContent = '點擊按鈕開啟放鬆旅程';
+        startBreathBtn.textContent = '開始靜心呼吸';
+        startBreathBtn.disabled = false;
+      };
+
+      startBreathBtn.addEventListener('click', startBreathing);
+      resetBreathBtn.addEventListener('click', resetBreathing);
+
+      // 5. Interactive Scent Matcher
+      const moodData = {
+        calm: {
+          icon: '🌊',
+          title: '雪松與岩蘭草靜心處方',
+          pairing: '大西洋雪松 × 窗孔龜背芋',
+          text: '深沉的木質香氣具有強大的「接地」力量，能安撫因緊繃而浮動的心神；搭配舒展綠葉的靜默陪伴，為你築起不受打擾的避風港。'
+        },
+        sleep: {
+          icon: '🌙',
+          title: '薰衣草安息香夜暮處方',
+          pairing: '高地薰衣草 × 金邊虎尾蘭',
+          text: '溫醇柔和的真正薰衣草融合安息香香草暖調，配合夜間能持續釋氧的虎尾蘭，讓焦慮隨微光化解，引導深層放鬆入夢。'
+        },
+        focus: {
+          icon: '💡',
+          title: '尤加利迷迭香喚醒處方',
+          pairing: '藍膠尤加利 × 琴葉榕',
+          text: '清新的草本芬芳能迅速破開午後昏沉，帶給大腦如深林微風般的穿透力，激發清晰思路與平穩專注力。'
+        },
+        nature: {
+          icon: '🍃',
+          title: '台灣檜木森林芬多精處方',
+          pairing: '天然檜木精油 × 翠綠觀葉盆景',
+          text: '宛如走入清晨薄霧圍繞的原始山林，純粹而高貴的木香能讓胸口豁然開朗，彷彿做了一場深層的室內森林浴。'
+        }
+      };
+
+      const moodBtns = document.querySelectorAll('.mood-btn');
+      const resIcon = document.getElementById('resIcon');
+      const resTitle = document.getElementById('resTitle');
+      const resPairing = document.getElementById('resPairing');
+      const resText = document.getElementById('resText');
+      const resBtn = document.getElementById('resBtn');
+      const matcherResult = document.getElementById('matcherResult');
+
+      moodBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          moodBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const mood = btn.dataset.mood;
+          const data = moodData[mood];
+
+          matcherResult.style.opacity = '0.4';
+          setTimeout(() => {
+            resIcon.textContent = data.icon;
+            resTitle.textContent = data.title;
+            resPairing.textContent = data.pairing;
+            resText.textContent = data.text;
+            resBtn.dataset.item = data.title;
+            matcherResult.style.opacity = '1';
+          }, 200);
+        });
+      });
+
+      // 6. Newsletter Subscription Form
+      const subscribeForm = document.getElementById('subscribeForm');
+      subscribeForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const input = subscribeForm.querySelector('input');
+        const email = input.value;
+        if (email) {
+          showToast(`感謝訂閱！下一期時光綠意札記將寄送至 ${email}`, '💌');
+          subscribeForm.reset();
+        }
+      });
+
+      // 7. Scroll Reveal Observer
       const revealItems = document.querySelectorAll('.reveal');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!('IntersectionObserver' in window) || reducedMotion) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!('IntersectionObserver' in window) || prefersReducedMotion) {
         revealItems.forEach(item => item.classList.add('visible'));
       } else {
-        const observer = new IntersectionObserver(entries => {
+        const observer = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
+              obs.unobserve(entry.target);
             }
           });
-        }, { threshold: .12 });
+        }, { threshold: 0.12 });
+
         revealItems.forEach(item => observer.observe(item));
       }
     })();
