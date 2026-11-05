@@ -353,8 +353,28 @@
       font-size: 17px;
       line-height: 1.9;
       color: rgba(250, 247, 242, 0.84);
-      margin-bottom: 36px;
+      margin-bottom: 24px;
       font-weight: 300;
+    }
+
+    /* Hero 影片崁入 Video Embed */
+    .hero-video-box {
+      margin-bottom: 32px;
+      max-width: 560px;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(178, 207, 180, 0.28);
+      background: #000;
+      aspect-ratio: 560 / 315;
+    }
+
+    .hero-video-box iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .hero-actions {
@@ -1535,6 +1555,20 @@
           <p class="hero-desc">
             「質感時光」為喜愛自然生活、注重日常儀式感的你，嚴選 100% 天然植物萃取香氛與室內觀葉植物。在繁忙緊湊的城市節奏裡，打造一方讓靈魂自由呼吸的靜謐棲所，放鬆心情、沉澱思緒。
           </p>
+
+          <!-- 英雄區塊影片崁入 (YouTube Video Embed) -->
+          <div class="hero-video-box">
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/kPk6VI8PqBg" 
+              title="質感時光 · 自然草木香氣與療癒生活" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
+          </div>
 
           <div class="hero-actions">
             <a href="#relax-zone" class="btn btn-primary">
